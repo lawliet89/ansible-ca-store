@@ -1,0 +1,13 @@
+---
+- name: Install dependencies
+  yum:
+    name: ca-certificates
+    state: present
+- name: Enable Updating of CA Trust
+  shell: update-ca-trust enable
+- name: Copy certificate over
+  copy:
+    src: "{{ certificate }}"
+    dest: "/etc/pki/ca-trust/source/anchors/{{ certificate | basename }}"
+- name: Update CA Store
+  shell: update-ca-trust extract

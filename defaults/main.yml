@@ -1,0 +1,2 @@
+---
+certificate: "{{ playbook_dir }}/ca.crt"

@@ -1,0 +1,11 @@
+---
+- name: Install Dependencies
+  apt:
+    name: "ca-certificates"
+    state: present
+- name: Copy Certificate to store
+  copy:
+    src: "{{ certificate }}"
+    dest: "/usr/local/share/ca-certificates/{{ certificate | basename }}"
+- name: Update CA Store
+  shell: update-ca-certificates
