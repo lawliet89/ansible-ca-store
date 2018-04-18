@@ -6,6 +6,6 @@
 - name: Copy Certificate to store
   copy:
     src: "{{ certificate }}"
-    dest: "/usr/local/share/ca-certificates/{{ certificate | basename }}"
+    dest: "/usr/local/share/ca-certificates/{{ certificate_rename }}"
 - name: Update CA Store
   shell: update-ca-certificates

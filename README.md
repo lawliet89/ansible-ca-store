@@ -14,4 +14,5 @@ The tasks in this role generally require privilege escalation with `become`.
 
 ### Variables
 
-- `certificate`: Path to the certificate on the host machine. The file name of the certificate will be used as-is. The file extension **MUST BE** `.crt`.
+- `certificate`: Path to the certificate on the host machine.
+- `certificate_rename`: File name to rename the certificate to on the target machine.

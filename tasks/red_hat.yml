@@ -8,6 +8,6 @@
 - name: Copy certificate over
   copy:
     src: "{{ certificate }}"
-    dest: "/etc/pki/ca-trust/source/anchors/{{ certificate | basename }}"
+    dest: "/etc/pki/ca-trust/source/anchors/{{ certificate_rename }}"
 - name: Update CA Store
   shell: update-ca-trust extract
